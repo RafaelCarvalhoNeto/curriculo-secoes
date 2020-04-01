@@ -1,0 +1,85 @@
+/*RESETS*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header{
+    background-image: url(../img/header2.png);
+    text-align: center;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: 100%;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    font-family: Tw Cen MT Condensed;
+    display: flex;
+}
+h1 {
+    text-align: left;
+    flex-basis: 50%;
+    margin: auto 0;
+    padding: 20px;
+    border-left: 4px solid #fff;
+}
+header p{
+    font-size: 2em;
+    text-align:right;
+    flex-basis: 50%;
+    margin: auto 0;
+    padding: 20px;
+    
+}
+
+header p:after{
+    content: '';
+    background: #fff;
+    height: 50px;
+    width: 10px;
+
+}
+.sobre{
+    height: 300px;
+    display: flex;
+}
+.sobre p{
+    flex-basis: 50%;
+    margin: auto 0;
+    padding: 30px 50px 30px 30px;
+}
+
+.sobre h2{
+    text-align: right;
+    text-transform: uppercase;
+    font-family: Tw Cen MT Condensed;
+    font-size: 4em;
+    flex-basis: 50%;
+    margin: auto 0;
+    padding: 30px 30px 30px 50px;
+}
+
+.experiencia{
+    background-image: url(../img/fundo2.png);
+    height: 100vh;
+    background-attachment: fixed;
+    color: #fff;
+}
+.experiencia h2{
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 20px 0;
+    padding: 60px 0 0 0;
+    font-family: Tw Cen MT Condensed;
+    font-size: 4em;
+}
+a[href="#chegasobre"]{
+    display: block;
+    position: absolute;
+    bottom: 60px;
+    left: 49%;
+    font-size: 3.5em;
+    color: #fff;
+}
