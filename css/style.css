@@ -44,11 +44,12 @@ header p:after{
 .sobre{
     height: 300px;
     display: flex;
+    padding: 0 12%;
 }
 .sobre p{
     flex-basis: 50%;
     margin: auto 0;
-    padding: 30px 100px 30px 30px;
+    padding: 30px 0 30px 30px;
 }
 
 .sobre h2{
@@ -65,11 +66,11 @@ header p:after{
     background-image: url(../img/fundo2.png);
     height: 900px;
     background-attachment: fixed;
-    padding: 20px 100px 100px 80px;
+    padding: 20px 12% 90px 12%;
     color: #fff;
     overflow: hidden;
 }
-.experiencia h2, .habilidades h2, .idiomas h2{
+.experiencia h2, .habilidades h2, .idiomas h2, footer h2{
     text-transform: uppercase;
     text-align: center;
     margin: 0 0 20px 0;
@@ -86,7 +87,6 @@ a[href="#chegasobre"]{
     color: #fff;
 }
 a[href="#chegasobre"]:hover{
-    color: goldenrod;
     filter: brightness(0.5)
 }
 .experiencia .detalhe {
@@ -120,18 +120,20 @@ a[href="#chegasobre"]:hover{
     margin: 5px 0;
 }
 .habilidades ul li{
-    display: inline-block;
-    right: 50%;
-    margin-left: 270px;
+    /*display: inline-block;
+    right: 50%;*/
     text-align: center;
     font-size: 1.5em;
+    list-style: none;    
 }
-.habilidades, .idiomas {
+.habilidades, .idiomas footer{
     height: 380px;
 }
 .habilidades ul{
     right: 50%;
-    padding: 30px 50px 50px 20px;
+    padding: 30px 12% 50px 12%;
+    display: flex;
+    justify-content: space-between;
 }
 .habilidades ul li i{
     font-size: 2em;
@@ -146,5 +148,36 @@ a[href="#chegasobre"]:hover{
     background-image: url(../img/idiomas.png);
     background-attachment: static;
     color: white;
-    height: 500px;
+    height: 550px;
+    padding: 30px 12% 50px 12%;
+}
+footer{
+    padding: 30px 12% 50px 12%;
+    text-align: center;
+}
+footer p:nth-child(2){
+    font-size: 2em;
+}
+footer p{
+    line-height: 1.5;
+}
+footer p a{
+    text-decoration: none;
+    color: #000;
+}
+footer p a:hover{
+    color: orange;
+    transition: all 0.2s ease-in;
+}
+
+footer h4{
+    text-transform: uppercase;
+    margin: 60px 0 20px 0;
+    font-family: Tw Cen MT Condensed;
+    font-size: 2em;
+}
+@media (max-width:1100px){
+    footer{
+        padding: 30px 30% 50px 30%;
+    }
 }
