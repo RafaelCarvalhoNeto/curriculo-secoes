@@ -30,28 +30,62 @@ header p{
     text-align:right;
     flex-basis: 50%;
     margin: auto 0;
-    padding: 20px;
-    
-}
-
-header p:after{
-    content: '';
-    background: #fff;
-    height: 50px;
-    width: 10px;
-
+    padding: 20px;   
 }
 .sobre{
-    height: 300px;
+    height: 270px;
     display: flex;
     padding: 0 12%;
+    flex-wrap: wrap;
 }
 .sobre p{
     flex-basis: 50%;
     margin: auto 0;
     padding: 30px 0 30px 30px;
 }
-
+.contato1{
+    text-align: center;
+    position: sticky;
+    top:0;
+    background: #fff;
+    height:55px;
+    z-index: 1;
+}
+.contato1 p{
+    padding-top: 5px;
+}
+.contato1 p span{
+    padding-right: 20px;
+    font-family: Tw Cen MT Condensed;
+    font-size: 2em;
+}
+.contato1 p span:before{
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: black;
+    display: block;
+    margin: 0 auto;
+}
+/*.contato1 p:after{
+    content: '';
+    width: 20px;
+    height: 5px;
+    background: black;
+    display: block;
+    margin: 0 auto;*/
+.contato1 p a{
+    text-decoration: none;
+    color: #000;
+    margin: 10px;
+}
+.contato1 p a:hover{
+    color: orange;
+    transition: all 0.2s ease-in;
+}
+.contato1 p a i{
+    font-size: 1.5em;
+}
 .sobre h2{
     text-align: right;
     text-transform: uppercase;
@@ -64,11 +98,11 @@ header p:after{
 
 .experiencia{
     background-image: url(../img/fundo2.png);
-    height: 900px;
+    height: 500px;
     background-attachment: fixed;
     padding: 20px 12% 90px 12%;
     color: #fff;
-    overflow: hidden;
+    overflow: auto;
 }
 .experiencia h2, .habilidades h2, .idiomas h2, footer h2{
     text-transform: uppercase;
@@ -87,7 +121,12 @@ a[href="#chegasobre"]{
     color: #fff;
 }
 a[href="#chegasobre"]:hover{
-    filter: brightness(0.5)
+    /*filter: brightness(0.5);*/
+    margin-top: 4px;
+    position: absolute;
+    bottom: 55px;
+    left: 49%;
+    transition: all 0.05s ease-in-out;
 }
 .experiencia .detalhe {
     text-align: center;
