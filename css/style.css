@@ -5,13 +5,15 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: 'Roboto';
-}   
+    scroll-snap-type: y;
+}
+
 header{
     background-image: url(../img/header2.png);
     text-align: center;
     height: 100vh;
     background-attachment: fixed;
-    background-size: 100%;
+    background-size: cover;
     color: #fff;
     text-transform: uppercase;
     position: relative;
@@ -35,10 +37,11 @@ header p{
     font-family: Tw Cen MT Condensed;
 }
 .sobre{
-    height: 270px;
+    margin: 50px;
     display: flex;
     padding: 0 12%;
     flex-wrap: wrap;
+    scroll-snap-align: start; /*ENTENDER COMO FUNCIONA*/
 }
 .sobre p{
     flex-basis: 50%;
@@ -50,11 +53,15 @@ header p{
     position: sticky;
     top:0;
     background: #fff;
-    height:55px;
     z-index: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
 }
 .contato1 p{
-    padding-top: 5px;
+    padding: 5px 0 5px 0;
+    background: #fff;
 }
 .contato1 p span{
     padding-right: 20px;
@@ -99,28 +106,28 @@ header p{
 }
 .xp{
     display: flex;
-    height: 600px;
     flex-flow: row wrap;
 
 }
 hr{
     height: 10px;
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-    order: -2;
     border: none;
-    margin-top: 5px;
+    flex: 1 1 100%
 }
 .lado{
     flex:1 1 30%;
     order: -1;
     background: rgb(245, 245, 245);
+    display: flex;
 }
 .lado h2{
     text-transform: uppercase;
     font-family: Tw Cen MT Condensed;
-    padding: 200px 20px 200px 70px;
     font-size: 2.5em;
     color: #4a4a4a;
+    align-self: center;
+    margin: 20px auto;
 }
 .experiencia{
     background: #000;
@@ -128,14 +135,23 @@ hr{
     color: #fff;
     overflow: auto;
     flex:1 1 70%;
-    height: 600px;
+    height: 70vh;
+    filter: drop-shadow(1px 0 3px rgba(0, 0, 0, 0.6));
+    display: flex;
+    flex-flow: column nowrap;
 }
-.experiencia h2{
+.exp{
     position: sticky;
     background-color: black;
-    top: 0
+    top: 0;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 20px 0;
+    padding: 20px 0 0 0;
+    font-family: Tw Cen MT Condensed;
+    font-size: 4em;
 }
-.experiencia h2, .habilidades h2, .idiomas h2, footer h2{
+.habilidades h2, .idiomas h2, footer h2{
     text-transform: uppercase;
     text-align: center;
     margin: 0 0 20px 0;
@@ -143,6 +159,25 @@ hr{
     font-family: Tw Cen MT Condensed;
     font-size: 4em;
 }
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+        transform:translateY(0);
+    }
+
+    40%{
+        -webkit-transform: translateY(-20px);
+        transform:translateY(-20px);
+    }
+
+    80%{
+        -webkit-transform: translateY(-10px);
+        transform:translateY(-10px);
+    }
+
+}
+
 a[href="#chegasobre"]{
     display: block;
     position: absolute;
@@ -152,20 +187,20 @@ a[href="#chegasobre"]{
     color: #fff;
 }
 a[href="#chegasobre"]:hover{
-    /*filter: brightness(0.5);*/
+    /*filter: brightness(0.5);
     margin-top: 4px;
     position: absolute;
     bottom: 55px;
     left: 49%;
-    transition: all 0.05s ease-in-out;
+    transition: all 0.1s ease;*/
+    animation: bounce 1s;
 }
 .experiencia div{
     margin: 0;
     width: 100%;
-    vertical-align: text-top;
     background-color: #f4b93d;
-    height: 400px;
-    padding: 120px 120px 120px 50px;
+    padding: 100px 100px 120px 50px;
+    flex: 0 1 auto
 }
 .experiencia div:nth-child(odd){
     background-color: #005ba9;
@@ -177,6 +212,28 @@ a[href="#chegasobre"]:hover{
 .experiencia div p{
     margin: 5px 0;
 }
+.xp .experiencia .volunt{
+    background-color: rgb(228, 228, 228);
+    padding: 50px 100px 60px 50px;
+}
+.xp .experiencia .volunt h2{
+    background: none;
+    color: grey;
+    text-align: left;
+    font-size: 3em;
+    padding-top: 2px;
+    margin-bottom: 30px;
+    font-family: Tw Cen MT Condensed;
+    text-transform: uppercase;
+}
+.xp .experiencia .volunt ul{
+    list-style: none;
+    color: black;
+}
+.xp .experiencia .volunt ul li h3{
+    margin-top: 8px;
+}
+
 .habilidades ul li{
     /*display: inline-block;
     right: 50%;*/
@@ -204,17 +261,46 @@ a[href="#chegasobre"]:hover{
 }
 .idiomas{
     background-image: url(../img/idiomas.png);
-    background-attachment: static;
     color: white;
-    height: 550px;
-    padding: 30px 12% 50px 12%;
+    padding: 10px 12% 50px 12%;
+}
+.academia{
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.linguas{
+    list-style: none;
+    text-align: center;
+}
+.linguas li{
+    padding: 10px 80px;
+    font-size: 1.5em;
+}
+.linguas li i{
+    display: block;
+    font-size: 2em;
+}
+.acad, .ling{
+    list-style: none;
+    width: 260px;
+    padding: 10px 0 10px 20px;
+    border-left: 2px solid #fff;
+}
+
+.academia li ul li{
+    display: block;
+}
+.academia h5{
+    font-size: 1em;
 }
 footer{
-    padding: 30px 12% 50px 12%;
+    padding: 30px 12% 30px 12%;
     text-align: center;
 }
 footer p:nth-child(2){
-    font-size: 2em;
+    font-size: 1em;
 }
 footer p{
     line-height: 1.5;
@@ -230,12 +316,35 @@ footer p a:hover{
 
 footer h4{
     text-transform: uppercase;
-    margin: 60px 0 20px 0;
+    margin: 30px 0 20px 0;
     font-family: Tw Cen MT Condensed;
     font-size: 2em;
 }
-@media (max-width:1100px){
-    footer{
-        padding: 30px 30% 50px 30%;
+footer h4:before{
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: black;
+    display: block;
+    margin: 10px auto;
+}
+/*SCROLLBAR CHANGES*/
+::-webkit-scrollbar {
+    width: 1em;
+    background-color: #Fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a;
+    outline: 1px solid #353535;
+    border-radius: 50px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    * {
+        scroll-snap-type: none;
     }
+
 }
